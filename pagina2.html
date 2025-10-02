@@ -6,14 +6,13 @@
   <body style="background-color: rgb(128, 162, 255);">
   <style>
     body {
-      background-color: #f0ffff; /* rosa clarinho */
+      background-color: #f0ffff;
       font-family: Verdana, sans-serif;
       margin: 20px;
     }
     h1, h2 {
       color: #333;
     }
-    /* caixas visuais */
     .container {
       background: #e8e4ff;
       padding: 15px;
@@ -53,7 +52,6 @@
 <body>
   <h1>Cadastro Geral</h1>
 
-  <!-- Formulário da Pessoa -->
   <div class="container">
     <h2>Cadastro da Pessoa</h2>
     <form id="pessoaForm">
@@ -66,7 +64,6 @@
     <p id="dadosPessoa"></p>
   </div>
 
-  <!-- Produtos -->
   <div class="container">
     <h2>Lista de Produtos</h2>
     <table id="tabelaProdutos">
@@ -112,7 +109,6 @@
   <a href="pagina3.html">Ir para Página 3</a>
 
   <script>
-    // Formulário da pessoa
     const pessoaForm = document.getElementById("pessoaForm");
     const dadosPessoa = document.getElementById("dadosPessoa");
 
@@ -126,7 +122,6 @@
       pessoaForm.reset();
     });
 
-    // Formulário de produtos
     const produtoForm = document.getElementById("produtoForm");
     const tabela = document.getElementById("tabelaProdutos").querySelector("tbody");
 
