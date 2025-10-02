@@ -1,56 +1,148 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Tabelas e Formulários</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Formulário e Tabelas</title>
+  <body style="background-color: rgb(128, 162, 255);">
+  <style>
+    body {
+      background-color: #f0ffff; /* rosa clarinho */
+      font-family: Verdana, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    /* caixas visuais */
+    .container {
+      background: #e8e4ff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      border: 1px solid #000000;
+      border-radius: 5px;
+    }
+    button {
+      padding: 8px 15px;
+      background: #3354d6;
+      border: none;
+      color: rgb(0, 0, 0);
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    button:hover {
+      background: #462db5;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #000000;
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <h1>Tabela de Compras</h1>
-    
-    <table border="1" cellpadding="5">
-        <tr>
-            <th>Produto</th>
-            <th>Quantidade</th>
-            <th>Preço</th>
-        </tr>
-        <tr>
-            <td>Notebook</td>
-            <td>1</td>
-            <td>R$ 3.500,00</td>
-        </tr>
-        <tr>
-            <td>Mouse</td>
-            <td>2</td>
-            <td>R$ 80,00</td>
-        </tr>
-        <tr>
-            <td>Mochila</td>
-            <td>1</td>
-            <td>R$ 150,00</td>
-        </tr>
-        <tr>
-            <td colspan="3" style="text-align:center;"><b>Total: R$ 3.730,00</b></td>
-        </tr>
-    </table>
+  <h1>Cadastro Geral</h1>
 
-    <h2>Formulário</h2>
-    <form>
-        Nome: <input type="text" name="nome"><br><br>
-        Idade: <input type="number" name="idade"><br><br>
-        E-mail: <input type="email" name="email"><br><br>
-        Sexo: 
-        <select name="sexo">
-            <option>Masculino</option>
-            <option>Feminino</option>
-        </select><br><br>
-        <input type="checkbox" name="termos"> Aceito os termos<br><br>
-        <button type="submit">Enviar</button>
+  <!-- Formulário da Pessoa -->
+  <div class="container">
+    <h2>Cadastro da Pessoa</h2>
+    <form id="pessoaForm">
+      <input type="text" id="nome" placeholder="Nome" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="telefone" placeholder="Telefone" required>
+      <br><br>
+      <button type="submit">Salvar Pessoa</button>
     </form>
+    <p id="dadosPessoa"></p>
+  </div>
 
-    <p>
-        <a href="index.html">Voltar para Página 1</a> | 
-        <a href="pagina3.html">Ir para Página 3</a>
-    </p>
+  <!-- Produtos -->
+  <div class="container">
+    <h2>Lista de Produtos</h2>
+    <table id="tabelaProdutos">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Valor (R$)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arroz 5kg</td>
+          <td>10</td>
+          <td>25,00</td>
+        </tr>
+        <tr>
+          <td>Feijão 1kg</td>
+          <td>15</td>
+          <td>8,50</td>
+        </tr>
+        <tr>
+          <td>Açúcar 1kg</td>
+          <td>20</td>
+          <td>5,20</td>
+        </tr>
+        <tr>
+          <td>Óleo 900ml</td>
+          <td>12</td>
+          <td>7,00</td>
+        </tr>
+        <tr>
+          <td>Café 500g</td>
+          <td>8</td>
+          <td>15,00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+  <a href="pagina1.html">Voltar para Página 1</a> | 
+  <a href="pagina3.html">Ir para Página 3</a>
+
+  <script>
+    // Formulário da pessoa
+    const pessoaForm = document.getElementById("pessoaForm");
+    const dadosPessoa = document.getElementById("dadosPessoa");
+
+    pessoaForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const telefone = document.getElementById("telefone").value;
+
+      dadosPessoa.innerHTML = `<b>Nome:</b> ${nome} <br> <b>Email:</b> ${email} <br> <b>Telefone:</b> ${telefone}`;
+      pessoaForm.reset();
+    });
+
+    // Formulário de produtos
+    const produtoForm = document.getElementById("produtoForm");
+    const tabela = document.getElementById("tabelaProdutos").querySelector("tbody");
+
+    produtoForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const produto = document.getElementById("produto").value;
+      const valor = document.getElementById("valor").value;
+
+      const novaLinha = document.createElement("tr");
+      novaLinha.innerHTML = `
+        <td>${produto}</td>
+        <td>R$ ${parseFloat(valor).toFixed(2)}</td>
+      `;
+      tabela.appendChild(novaLinha);
+      produtoForm.reset();
+    });
+  </script>
 </body>
 </html>

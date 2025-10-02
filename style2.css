@@ -1,0 +1,37 @@
+/* Seletor por TAG */
+h1 {
+  color: rgb(0, 255, 72);
+  text-align: center;
+}
+
+/* Usando Flexbox na página inteira */
+body {
+  display: flex;
+  flex-direction: column; /* organiza os elementos em coluna */
+  justify-content: center; /* centraliza verticalmente */
+  align-items: center; /* centraliza horizontalmente */
+  min-height: 100vh; /* ocupa a tela inteira */
+  margin: 0;
+}
+
+/* Seletor por CLASSE */
+.caixa {
+  width: 200px;
+  height: 100px;
+  background-color: rgb(255, 251, 0);
+  margin: 20px 0; /* espaço entre a caixa e os outros elementos */
+}
+
+/* Seletor por ID */
+#botao {
+  background-color: rgb(104, 187, 255);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#botao:hover {
+  background-color: darkviolet;
+}
