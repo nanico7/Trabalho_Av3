@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabelas e Formulários</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Tabela de Compras</h1>
+    
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Produto</th>
+            <th>Quantidade</th>
+            <th>Preço</th>
+        </tr>
+        <tr>
+            <td>Notebook</td>
+            <td>1</td>
+            <td>R$ 3.500,00</td>
+        </tr>
+        <tr>
+            <td>Mouse</td>
+            <td>2</td>
+            <td>R$ 80,00</td>
+        </tr>
+        <tr>
+            <td>Mochila</td>
+            <td>1</td>
+            <td>R$ 150,00</td>
+        </tr>
+        <tr>
+            <td colspan="3" style="text-align:center;"><b>Total: R$ 3.730,00</b></td>
+        </tr>
+    </table>
+
+    <h2>Formulário</h2>
+    <form>
+        Nome: <input type="text" name="nome"><br><br>
+        Idade: <input type="number" name="idade"><br><br>
+        E-mail: <input type="email" name="email"><br><br>
+        Sexo: 
+        <select name="sexo">
+            <option>Masculino</option>
+            <option>Feminino</option>
+        </select><br><br>
+        <input type="checkbox" name="termos"> Aceito os termos<br><br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <p>
+        <a href="index.html">Voltar para Página 1</a> | 
+        <a href="pagina3.html">Ir para Página 3</a>
+    </p>
+</body>
+</html>

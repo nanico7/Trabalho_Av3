@@ -1,0 +1,30 @@
+/* Seletor por tag */
+h1 {
+    color: darkred;
+    text-align: center;
+}
+
+/* Seletor por classe */
+.texto-destaque {
+    font-size: 18px;
+    color: green;
+}
+
+/* Seletor por ID */
+#caixaAzul {
+    width: 200px;
+    height: 100px;
+    background-color: blue;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Centralizar no meio da tela */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
